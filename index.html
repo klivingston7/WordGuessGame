@@ -32,35 +32,40 @@
 
 <div class="container">
   <div class="row">
-    <div class="mx-auto d-block hint">
+    <div class="d-block hint">
       <p><b>Hint:</b></p>
-      <p id="displayHint"></p></div>
+    </div>
+  </div>    
+  <div class="row">
+    <div class="mx-auto d-block">
+     <p id="displayHint"></p>
+    </div>
   </div>  
   <div class="row"> 
-    <div class="mx-auto d-block">
-      <p id="displayLegend"></p>
+    <div id="displayGuess" class="mx-auto d-block">
+      <ul id="displayLegend"></ul>
     </div>
   </div>
 </div>
 <br>
 <br>
+<br>
 
 <div class="container">
   <div class="row text-center">
-    <div class="col-sm-3 score">Letters Guessed: 
+    <div class="col-sm-4 score">Letters Guessed: 
       <p id="letters_Guessed"></p>
     </div>
-    <div class="col-sm-3 score">Remaining Letters: 
+    <div class="col-sm-4 score">Remaining Letters: 
       <p id="remainingLetters"></p>
     </div>
-    <div class="col-sm-3 score">Remaining Guesses: 
-      <p id="remainingGuesses"></p>
-    </div>
-    <div class="col-sm-3 score">Pony Up Level: 
+    <div class="col-sm-4 score">Pony Up Level: 
     <p id="ponyUp"></p>
    </div>
   </div> 
 
+  <br>
+  <br>
   <br>
 
   <div class="row">
@@ -70,7 +75,7 @@
 <br>
 <br>
 <!-- Linking Personal JS -->
-<script type="text/javascript" src="assets/javascript/game1.js"></script>
+<script type="text/javascript" src="assets/javascript/game.js"></script>
 
 </body>
 

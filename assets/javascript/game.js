@@ -54,7 +54,6 @@ var currentLegend; // empty var for legend that will be guessed
 var displayString= ''; // empty variable to display strings of ...
 var lettersGuessed = []; // empty array of letters guessed
 var remainingLetters = 0;
-var remainingGuesses = 8;
 var ponyUp = 0; // wrong guesses, are you a SMU fan?
 var currentImage;
 var win_lose_message; // win or lose message
@@ -65,7 +64,6 @@ var displayHint = document.getElementById('displayHint');
 var imageLegend = document.getElementById('imageLegend');
 var letters_Guessed = document.getElementById('letters_Guessed');
 var remainingLetters = document.getElementById('remainingLetters');
-var remainingGuesses = document.getElementById('remainingGuesses');
 var ponyUp = document.getElementById('ponyUp');
 
 function start() {
@@ -73,7 +71,6 @@ function start() {
     console.log(currentLegend);
     displayString = '';
     lettersGuessed = [];
-    remainingGuesses = 8;
     remainingLetters = 0;
     ponyUp = 0;
 
@@ -103,23 +100,21 @@ function start() {
 document.onkeyup = function(event) {
     console.log(event.key);
     
-    
-
     for (var i = 0; i < lettersGuessed.length; i++) {
         if (lettersGuessed[i] === event.key) {
-            var newLetter = document.getElementById("letters_Guessed");
-            newLetter.innerHTML = "<p>" + lettersGuessed + "</p>";
             console.log("Key already guessed, bailing.");
             return;
         }
       }
       
-      // Add this letter to the already guessed letters array
       lettersGuessed.push(event.key);
+      var newLetter = document.getElementById("letters_Guessed");
+      newLetter.innerHTML = "<p>" + lettersGuessed + "</p>";
+    // Add this letter to the already guessed letters array
 
     // was the letter in one of the lengend's names?
     var tempstr = '';
-    var newLetter;
+    var newLetter = false;
 
 
     for (var i = 0; i < currentLegend.legend.length; i++) {

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <title>All Time TCU Football</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Linking jQuery library -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <!-- Linking Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <!-- Linking Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,500" rel="stylesheet">
+  <!-- Linking CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body>
+
+<div class="jumbotron">
+  <div class="row">
+    <img class="col-sm-1.5 tcuLogo1" src="assets/images/tcuText.png">
+    <h1 class="col-sm-9 text-center">TCU Football Legends</h1> 
+    <img class="col-sm-1.5 tcuLogo2" src="assets/images/tcuAn.png">
+  </div>
+  <div class="row mx-auto d-block">
+    <h2 class="text-center">Guess the Legend!</h2>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="mx-auto d-block hint">
+      <p><b>Hint:</b></p>
+      <p id="displayHint"></p></div>
+  </div>  
+  <div class="row"> 
+    <div class="mx-auto d-block">
+      <p id="displayLegend"></p>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+
+<div class="container">
+  <div class="row text-center">
+    <div class="col-sm-3 score">Letters Guessed: 
+      <p id="letters_Guessed"></p>
+    </div>
+    <div class="col-sm-3 score">Remaining Letters: 
+      <p id="remainingLetters"></p>
+    </div>
+    <div class="col-sm-3 score">Remaining Guesses: 
+      <p id="remainingGuesses"></p>
+    </div>
+    <div class="col-sm-3 score">Pony Up Level: 
+    <p id="ponyUp"></p>
+   </div>
+  </div> 
+
+  <br>
+
+  <div class="row">
+    <div class="mx-auto d-block" id="display_Image"><img id="imageLegend" src="assets/images/tcuLogo.png"></div>
+  </div>  
+</div>
+<br>
+<br>
+<!-- Linking Personal JS -->
+<script type="text/javascript" src="assets/javascript/game1.js"></script>
+
+</body>
+
+</html>

@@ -1,7 +1,7 @@
 .jumbotron {
     background-color: #4c4378;
     color: white;
-    height: 200px;
+    height: auto;
     padding-top: 32px;
     letter-spacing: 4px;
 }
@@ -29,10 +29,9 @@ h2{
     font-weight: 300;
 }
 
-.hint {
+#btn {
     font-family: 'Montserrat', sans-serif;
-    font-size: 24px;
-    font-weight: 300;
+    font-size: 20px;
 }
 
 #imageLegend {

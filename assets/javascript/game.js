@@ -63,15 +63,14 @@ var displayLegend = document.getElementById('displayLegend');
 var displayHint = document.getElementById('displayHint');
 var imageLegend = document.getElementById('imageLegend');
 var letters_Guessed = document.getElementById('letters_Guessed');
-var remainingLetters = document.getElementById('remainingLetters');
-var ponyUp = document.getElementById('ponyUp');
+var remaining_Letters = document.getElementById('remainingLetters');
+var ponyUpLevel = document.getElementById('ponyUp');
 
 function start() {
     currentLegend = newLegend();
     console.log(currentLegend);
     displayString = '';
     lettersGuessed = [];
-    remainingLetters = 0;
     ponyUp = 0;
 
 
@@ -81,6 +80,7 @@ function start() {
         // if there is NOT a " " (empty space) then put a "_" instead
         if (currentLegend.legend.charAt(i) !== " ") { 
             displayString += "_";
+            remainingLetters += 1;
         }
         // if there is a " " then display a " " 
         else {
@@ -92,25 +92,26 @@ function start() {
     displayLegend.textContent = displayString;
     // setting text content of html element #displayHint to current legend hint
     displayHint.textContent = currentLegend.hint;
-    remainingLetters.innerHTML = currentLegend.length;
-    ponyUp.innerHTML = ponyUp;
+    // remainingLetters = currentLegend.length;
+    ponyUpLevel.innerHTML = ponyUp;
 
+    remaining_Letters.innerHTML = remainingLetters;
 }
 
 document.onkeyup = function(event) {
-    console.log(event.key);
+    // console.log(event.key);
     
     for (var i = 0; i < lettersGuessed.length; i++) {
         if (lettersGuessed[i] === event.key) {
-            console.log("Key already guessed, bailing.");
+            console.log("already guessed");
             return;
         }
       }
       
+    // Add this letter to the already guessed letters array
       lettersGuessed.push(event.key);
       var newLetter = document.getElementById("letters_Guessed");
       newLetter.innerHTML = "<p>" + lettersGuessed + "</p>";
-    // Add this letter to the already guessed letters array
 
     // was the letter in one of the lengend's names?
     var tempstr = '';
@@ -119,33 +120,36 @@ document.onkeyup = function(event) {
 
     for (var i = 0; i < currentLegend.legend.length; i++) {
         console.log("currentLegend.legend = " + currentLegend.legend);
-        console.log(currentLegend.legend.charAt(i).toUpperCase());
-        if ((currentLegend.legend.charAt(i).toUpperCase == event.key) ||
-            (currentLegend.legend.charAt(i).toLowerCase == event.key)) {
+        console.log(currentLegend.legend.charAt(i).toUpperCase(), event.key);
+        if ((currentLegend.legend.charAt(i).toUpperCase() == event.key) ||
+            (currentLegend.legend.charAt(i).toLowerCase() == event.key)) {
             tempstr += currentLegend.legend.charAt(i);
-            remainingLetters--; 
+            remainingLetters --- 1;; 
             newLetter = true;
         }
         else {
+            console.log("else");
             tempstr += displayString.charAt(i);
         }
     }
 
     if (newLetter === false) {
         ponyUp++;
-        if (ponyUp === 8) {
+        if (ponyUp === 6) {
             win_lose_message = '<button class="btn" onclick="start()">You must be a Pony fan in disguise. Try Again?</button>';
             displayHint.innerHTML = win_lose_message;
         }
     }
 
+    console.log(tempstr);
     displayString = tempstr;
     displayLegend.textContent = displayString;
 
-    // if (remainingLetters === 0) {
-    //     win_lose_message = '<button class="btn" onclick="start()">Go Frogs!!</button>';
-    //     displayHint.innerHTML = win_lose_message;
-    // }
+    if (remainingLetters === 0) {
+        win_lose_message = '<button class="btn" onclick="start()">Go Frogs!!</button>';
+        displayHint.innerHTML = win_lose_message;
+        var hint = document.getElementByClass("hint");
+    }
 
 }
 

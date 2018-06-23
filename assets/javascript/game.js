@@ -55,7 +55,6 @@ var displayString= ''; // empty variable to display strings of ...
 var lettersGuessed = []; // empty array of letters guessed
 var remainingLetters = 0;
 var ponyUp = 0; // wrong guesses, are you a SMU fan?
-var currentImage;
 var win_lose_message; // win or lose message
 
 // pulling html elements
@@ -133,11 +132,14 @@ document.onkeyup = function(event) {
         }
     }
 
+    var currentImage = currentLegend.image;
+
     if (newLetter === false) {
         ponyUp++;
         if (ponyUp === 6) {
-            win_lose_message = '<button class="btn" onclick="start()">You must be a Pony fan in disguise. Try Again?</button>';
+            win_lose_message = '<button class="btn" onclick="start()">You must be a Pony in disguise. Try Again?</button>';
             displayHint.innerHTML = win_lose_message;
+            imageLegend.src = "assets/images/smu_mustangs.png";
         }
     }
 
@@ -150,7 +152,7 @@ document.onkeyup = function(event) {
     if (remainingLetters === 0) {
         win_lose_message = '<button class="btn" onclick="start()">Go Frogs!! Play Again?!</button>';
         displayHint.innerHTML = win_lose_message;
-        var hint = document.getElementByClass("hint");
+        imageLegend.src = currentImage;
     }
 
 }

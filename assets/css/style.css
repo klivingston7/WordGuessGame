@@ -35,11 +35,12 @@ h2{
 }
 
 #imageLegend {
-    height: 400px;
+    height: 300px;
     width: auto;
 }
 
 #displayHint {
+    text-align: center;
     font-family: 'Montserrat', sans-serif;
     font-size: 20px;
 }

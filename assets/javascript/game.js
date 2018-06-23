@@ -1,7 +1,7 @@
 
 // an array of legends names and corresponding images / textual hints
 var tcuLegends = [
-{legend: "Slingin Sammy Baugh", image: "assets/images/sammyBaugh.jpg",
+{legend: "Sammy Baugh", image: "assets/images/sammyBaugh.jpg",
 hint: "Told he could play three sports (football, baseball, & basketball), he came to TCU & was named an Football All American in 1935 & 1936.  He also led TCU to two bowl game wins; including a 3 to 2 victory over LSU in the 1936 Sugar Bowl, TCU's first National Championship."},
 {legend: "Ladanian Tomlinson", image: "assets/images/LT.jpg",
 hint: "Set what once was an NCAA record breaking 406 yards against UTEP. His 2,158 yards in 2000 led the nation in rushing & placed as the fourth best rushing season in NCAA history (at the time)."},
